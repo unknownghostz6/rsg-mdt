@@ -1,6 +1,6 @@
 For vorp_core framework
 
-## Script Version made by i3ucky (all i did with my version is change notes to telegrams, i highly suggest using i3ucky version over mine as hes the original creator) :
+## Script UI made by i3ucky (all i did with my version is change notes to telegrams and convert to rsg_core (WIP)):
 https://github.com/i3ucky/bucky_mdt
 
 ## How to Install?
