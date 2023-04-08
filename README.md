@@ -1,4 +1,4 @@
-## For rsg_core framework (WIP)
+## For rsg_core framework
 
 ## Script UI made by i3ucky:
 https://github.com/i3ucky/bucky_mdt
