@@ -1,6 +1,6 @@
 For rsg_core framework
 
-## Script UI made by i3ucky (all i did with my version is change notes to telegrams and convert to rsg_core (WIP)):
+## Script UI made by i3ucky (WIP):
 https://github.com/i3ucky/bucky_mdt
 
 ## How to Install?
