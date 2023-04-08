@@ -1,6 +1,6 @@
-For rsg_core framework
+## For rsg_core framework (WIP)
 
-## Script UI made by i3ucky (WIP):
+## Script UI made by i3ucky:
 https://github.com/i3ucky/bucky_mdt
 
 ## How to Install?
