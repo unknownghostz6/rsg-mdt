@@ -8,7 +8,10 @@ RegisterCommand(""..Config.Command.."", function(source, args)
 	local group = RSGCore.Functions.GetPermission(_source)
     local cid = xPlayer.PlayerData.citizenid
 	local officername = xPlayer.PlayerData.charinfo.firstname .. ' ' .. xPlayer.PlayerData.charinfo.lastname
-    if xPlayer.PlayerData.job.name == 'police' or 'sheriff' or 'marshal' or 'ranger' then
+	local job_access = false
+        for k,v in pairs(Config.Jobs) do
+    if xPlayer.PlayerData.job.name == v then
+		job_access = true
 				exports.oxmysql:fetch("SELECT * FROM (SELECT * FROM `mdt_reports` ORDER BY `id` DESC LIMIT 6) sub ORDER BY `id` DESC", {}, function(reports)
 					for r = 1, #reports do
 						reports[r].charges = json.decode(reports[r].charges)
@@ -26,7 +29,10 @@ RegisterCommand(""..Config.Command.."", function(source, args)
 				end)
 			end)
             end
- 
+        end
+        if job_access == false then
+            return false
+        end
 end)
 
 RegisterServerEvent("ghost_mdt:getOffensesAndOfficer")
