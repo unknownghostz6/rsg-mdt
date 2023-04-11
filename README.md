@@ -1,5 +1,5 @@
 ## For rsg_core framework (WIP)
-Big thanks to Marwen-☭#0001 for helping with conversion
+Big thanks to Marwen-☭#0001 for helping with conversion and adding icons
 
 ## Script UI made by i3ucky:
 https://github.com/i3ucky/bucky_mdt
