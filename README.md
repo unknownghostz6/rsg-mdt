@@ -16,7 +16,7 @@ https://github.com/i3ucky/bucky_mdt
 
 For use through radial menu add code snippet thats below in rsg-radialmenu\config.lua after line 302 (lawbadge)
 
-```{
+``` {
             id = 'mdt',
             title = 'MDT',
             icon = 'mobile-screen',
