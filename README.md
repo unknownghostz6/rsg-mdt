@@ -14,13 +14,13 @@ https://github.com/i3ucky/bucky_mdt
 ## Example
 ![pic1](https://cdn.discordapp.com/attachments/963010990373494845/1095199625922744349/Screenshot_24.png)
 
-For use through radial menu add code snippet thats below in rsg-radialmenu\config.lua after line 302 (lawbadge)
+For use through radial menu add code snippet thats below in rsg-radialmenu\config.lua after line 341 (lawbadge)
  
 {
-            id = 'mdt',
-            title = 'MDT',
-            icon = 'mobile-screen',
-            type = 'command',
-            event = 'mdt',
-            shouldClose = true
-        },
+  id = 'mdt',
+  title = 'MDT',
+  icon = 'mobile-screen',
+  type = 'command',
+  event = 'mdt',
+  shouldClose = true 
+}, 
