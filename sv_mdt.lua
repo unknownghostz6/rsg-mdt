@@ -4,13 +4,13 @@ RegisterCommand(""..Config.Command.."", function(source, args)
     local _source = source
 	local tablex = {}
     local _source = source
-	local xPlayer = RSGCore.Functions.GetPlayer(_source)
+	local Player = RSGCore.Functions.GetPlayer(_source)
 	local group = RSGCore.Functions.GetPermission(_source)
-    local cid = xPlayer.PlayerData.citizenid
-	local officername = xPlayer.PlayerData.charinfo.firstname .. ' ' .. xPlayer.PlayerData.charinfo.lastname
+    local cid = Player.PlayerData.citizenid
+	local officername = Player.PlayerData.charinfo.firstname .. ' ' .. Player.PlayerData.charinfo.lastname
 	local job_access = false
         for k,v in pairs(Config.Jobs) do
-    if xPlayer.PlayerData.job.name == v then
+    if Player.PlayerData.job.type == v then
 		job_access = true
 				exports.oxmysql:fetch("SELECT * FROM (SELECT * FROM `mdt_reports` ORDER BY `id` DESC LIMIT 6) sub ORDER BY `id` DESC", {}, function(reports)
 					for r = 1, #reports do
@@ -38,9 +38,8 @@ end)
 RegisterServerEvent("rsg-mdt:getOffensesAndOfficer")
 AddEventHandler("rsg-mdt:getOffensesAndOfficer", function()
 	local usource = source
-	local xPlayer = RSGCore.Functions.GetPlayer(usource)
-	--local officername = (Character.firstname.. " " ..Character.lastname)
-	local officername = xPlayer.PlayerData.charinfo.firstname .. ' ' .. xPlayer.PlayerData.charinfo.lastname
+	local Player = RSGCore.Functions.GetPlayer(usource)
+	local officername = Player.PlayerData.charinfo.firstname .. ' ' .. Player.PlayerData.charinfo.lastname
 
 	local charges = {}
 	exports.oxmysql:fetch('SELECT * FROM fine_types', {}, function(fines)
@@ -229,9 +228,8 @@ AddEventHandler("rsg-mdt:submitNewReport", function(data)
 	local usource = source
 	local tablex = {}
     local _source = source
-	local xPlayer = RSGCore.Functions.GetPlayer(usource)
-	--local cid = xPlayer.PlayerData.citizenid
-	local officername = xPlayer.PlayerData.charinfo.firstname .. ' ' .. xPlayer.PlayerData.charinfo.lastname
+	local Player = RSGCore.Functions.GetPlayer(usource)
+	local officername = Player.PlayerData.charinfo.firstname .. ' ' .. Player.PlayerData.charinfo.lastname
 
 	charges = json.encode(data.charges)
 	data.date = os.date('%m-%d-%Y %H:%M:%S', os.time())
@@ -256,9 +254,8 @@ AddEventHandler("rsg-mdt:submitNote", function(data)
 	local usource = source
 	local tablex = {}
     local _source = source
-	local xPlayer = RSGCore.Functions.GetPlayer(usource)
-	--local cid = xPlayer.PlayerData.citizenid
-	local officername = xPlayer.PlayerData.charinfo.firstname .. ' ' .. xPlayer.PlayerData.charinfo.lastname
+	local Player = RSGCore.Functions.GetPlayer(usource)
+	local officername = Player.PlayerData.charinfo.firstname .. ' ' .. Player.PlayerData.charinfo.lastname
 	charges = json.encode(data.charges)
 	data.date = os.date('%m-%d-%Y %H:%M:%S', os.time())
 	exports.oxmysql:insert('INSERT INTO `mdt_telegrams` ( `title`, `incident`, `author`, `date`) VALUES (?, ?, ?, ?)', {data.title, data.note, officername, data.date,}, function(id)
@@ -301,9 +298,8 @@ AddEventHandler("rsg-mdt:submitNewWarrant", function(data)
 	local usource = source
 	local tablex = {}
     local _source = source
-	local xPlayer = RSGCore.Functions.GetPlayer(usource)
-	--local cid = xPlayer.PlayerData.citizenid
-	local officername = xPlayer.PlayerData.charinfo.firstname .. ' ' .. xPlayer.PlayerData.charinfo.lastname
+	local Player = RSGCore.Functions.GetPlayer(usource)
+	local officername = Player.PlayerData.charinfo.firstname .. ' ' .. Player.PlayerData.charinfo.lastname
 
 	data.charges = json.encode(data.charges)
 	data.author = officername
