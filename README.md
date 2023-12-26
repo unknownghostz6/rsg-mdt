@@ -1,4 +1,4 @@
-## For rsg_core framework (WIP)
+## For rsg_core framework
 Big thanks to Marwen-☭#0001 for helping with conversion and adding icons
 
 ## Script UI made by i3ucky:
