@@ -3,7 +3,7 @@ Config = {}
 --[[ Command ]]--
 Config.Command = "mdt"
 
-Config.Jobs = {"ranger","marshal","sheriff","police"}
+Config.Jobs = {"ranger","marshal","vallaw","rholaw","blklaw","strlaw","stdenlaw","leo"}
 
 --[[ Notifys ]]--
 Config.Notify = {  
