@@ -12,24 +12,6 @@ function DrawTxt(str, x, y, w, h, enableShadow, col1, col2, col3, a, centre)
     if enableShadow then SetTextDropshadow(1, 0, 0, 0, 255) end
     DisplayText(str, x, y)
 end
-    Citizen.CreateThread(function()   
-        if Config.UseOffice == true then 
-        while true do 
-            Citizen.Wait(1)
-            local coords = GetEntityCoords(PlayerPedId())
-            for k,v in pairs(Config.Office) do
-                if GetDistanceBetweenCoords(coords.x, coords.y, coords.z, v.coords[1], v.coords[2], v.coords[3], false) < 1.0  then
-                DrawTxt(Config.Open['text'], 0.50, 0.95, 0.7, 0.5, true, 223, 44, 53, 255, true)
-                if IsControlJustPressed(0, Config.Open['key']) then
-                    ExecuteCommand(""..Config.Command.."")                
-                end    
-            end
-        end
-    end
-        end
-    end)
-
---TriggerServerEvent("rsg-mdt:getOffensesAndOfficer")
 
 RegisterNetEvent("rsg-mdt:toggleVisibilty")
 AddEventHandler("rsg-mdt:toggleVisibilty", function(reports, warrants, officer, job, grade, note)
