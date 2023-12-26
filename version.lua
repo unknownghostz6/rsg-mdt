@@ -25,20 +25,12 @@ Version.checkRelease = function (resourcename, repo)
         end
 
         if uptodate then
-            print("^1---------------------------------------------------------------------------^0\n" ..
-            " rsg-mdt -  Archive System for RSGCore\n" ..
-            "^1---------------------------------------------------------------------------^0\n")    
-            print('^2✅ Up to Date! (Current Version '..current.version..')^0')
-        elseif overdate then
-            print("^1---------------------------------------------------------------------------^0\n" ..
-            " rsg-mdt -  Archive System for RSGCore\n" ..
-            "^1---------------------------------------------------------------------------^0\n")       
+            print('^2✅ Up to Date! [rsg-mdt] (Current Version '..current.version..')^0')
+        elseif overdate then      
             print('^3⚠️Unsupported! (Version '..current.version..')^0')
             print('^4Current Version ^2('..latest.version..') ^3<'..latest.url..'>^0')
         else
-            print("^1---------------------------------------------------------------------------^0\n" ..
-            " rsg-mdt -  Archive System for RSGCore\n" ..
-            "^1---------------------------------------------------------------------------^0\n")     
+            print(" rsg-mdt - Archive System for RSGCore\n")    
             print('^1❌Outdated! (Version '..current.version..')^0')
             print('^4New Version ^2('..latest.version..') ^3<'..latest.url..'>^0')
             print('^4Changelog - ^0\r\n'..latest.body)
