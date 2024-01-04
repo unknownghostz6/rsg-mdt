@@ -10,7 +10,7 @@ local function versionCheckPrint(_type, log)
 end
 
 local function CheckVersion()
-    PerformHttpRequest('https://raw.githubusercontent.com/unknownghostz6/rsg-mdt/main/version.txt', function(err, text, headers)
+    PerformHttpRequest('https://github.com/unknownghostz6/rsg-mdt/blob/main/version.txt', function(err, text, headers)
         local currentVersion = GetResourceMetadata(GetCurrentResourceName(), 'version')
 
         if not text then 
