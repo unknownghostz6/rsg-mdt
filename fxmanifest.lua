@@ -31,5 +31,3 @@ server_scripts {
     'sv_mdt.lua',
     'version.lua',
 }
-
-version '1.1'
